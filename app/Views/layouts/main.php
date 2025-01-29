@@ -16,10 +16,11 @@
 
 <body class="postion-relative">
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand fw-bold text-warning" href="#">renzk.</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -31,7 +32,7 @@
                             <a class="nav-link fw-bold <?= is_active('blog') ?> " href="/blog">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold <?= is_active('projects') ?>" href="#">Projects</a>
+                            <a class="nav-link fw-bold <?= is_active('projects') ?>" href="/projects">Projects</a>
                         </li>
                     </ul>
                 </div>
@@ -44,6 +45,22 @@
         </div>
         <?= $this->renderSection('content') ?>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.add("loaded"); // Fade in on load
+
+            document.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault(); // Stop instant navigation
+                    var url = this.href;
+                    document.body.classList.remove("loaded"); // Fade out
+                    setTimeout(() => {
+                        window.location.href = url; // Navigate after fade
+                    }, 500);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

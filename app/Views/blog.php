@@ -1,9 +1,8 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
-<h1>
-    Projects
-</h1>
-<div class="container">
+
+<div class="position-relative pt-5">
+    <h1 class="text-xlarge my-5 text-center fw-bold">Blogs</h1>
     <div class="d-flex flex-wrap  justify-content-center ">
         <?php foreach ($blogs as $blog): ?>
             <div class="col-md-4 mb-4">

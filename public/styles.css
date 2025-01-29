@@ -7,6 +7,14 @@
   transition: all 0.25s ease-out;
 }
 
+body {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+body.loaded {
+  opacity: 1;
+}
+
 .nav-masthead .nav-link {
   color: rgba(255, 255, 255, 0.5);
   border-bottom: 0.25rem solid transparent;
@@ -29,6 +37,11 @@
 @media (min-width: 992px) {
   .text-large {
     font-size: 4rem;
+  }
+}
+@media (min-width: 1200px) {
+  .text-xlarge {
+    font-size: 6rem;
   }
 }
 
@@ -55,7 +68,7 @@
 }
 
 .tech-item.grayed-out {
-  opacity: 0.5; /* Gray out the item */
+  opacity: 0.3; /* Gray out the item */
   pointer-events: none; /* Disable pointer events */
 }
 .resume-btn {
@@ -149,7 +162,7 @@
   color: black; /* Black text color */
   border: none;
 }
-.resume-btn{
+.resume-btn {
   color: #ffffff2a;
 }
 
@@ -158,14 +171,14 @@
 }
 
 .glass-card {
-  background: rgba(0, 0, 0, 0.2); /* Semi-transparent white background */
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent white background */
   backdrop-filter: blur(10px); /* Blur effect */
   border: none;
   /* border: 1px solid rgba(255, 255, 255, 0.3); Light border */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
-  padding: 1rem;
+
   /* Add padding for better spacing */
 }
 
@@ -180,4 +193,9 @@
 .btn-dlcv:hover {
   background-color: #24c539;
   color: #000;
+}
+
+.card svg {
+  width: 50px; /* Set the desired width */
+  height: 50px; /* Set the desired height */
 }
