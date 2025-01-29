@@ -1,0 +1,183 @@
+/*
+ * Header
+ */
+
+/* This is just to transition when you change the viewport size. */
+* {
+  transition: all 0.25s ease-out;
+}
+
+.nav-masthead .nav-link {
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom: 0.25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 992px) {
+  .text-large {
+    font-size: 4rem;
+  }
+}
+
+.card-hover {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tech-stack .card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tech-stack .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tech-item {
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for opacity and transform */
+}
+
+.tech-item.grayed-out {
+  opacity: 0.5; /* Gray out the item */
+  pointer-events: none; /* Disable pointer events */
+}
+.resume-btn {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.resume-btn:hover {
+  background-color: yellow;
+  color: black;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.gradient {
+  --size: 250px;
+  --speed: 50s;
+  --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+  width: var(--size);
+  height: var(--size);
+  filter: blur(calc(var(--size) / 5));
+  background-image: linear-gradient(rgba(55, 235, 169, 0.85), #5b37eb);
+  animation: rotate var(--speed) var(--easing) alternate infinite;
+  border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+}
+
+@media (min-width: 720px) {
+  .gradient {
+    --size: 500px;
+  }
+}
+.gradient-body {
+  /* background-color: #222; */
+  position: absolute;
+  inset: 0;
+  display: flex;
+  place-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.icon-btn {
+  border: none; /* Remove default border */
+  transition: background-color 0.3s;
+}
+
+.icon-btn:hover {
+  backdrop-filter: blur(5px); /* Glass effect */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Initial semi-transparent background */
+}
+
+.icon-btn i {
+  color: inherit; /* Ensure the icon color is inherited */
+}
+
+/* Add this to your styles.css file */
+
+.filter-btn {
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
+  color: white; /* White text color */
+  padding: 0.5rem 1rem; /* Padding for better spacing */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.filter-btn:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Semi-transparent white background on hover */
+  color: black; /* Black text color on hover */
+}
+
+.filter-btn.active {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Semi-transparent white background */
+  color: black; /* Black text color */
+  border: none;
+}
+.resume-btn{
+  color: #ffffff2a;
+}
+
+.reset-btn:hover {
+  text-decoration: underline;
+}
+
+.glass-card {
+  background: rgba(0, 0, 0, 0.2); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  border: none;
+  /* border: 1px solid rgba(255, 255, 255, 0.3); Light border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+  padding: 1rem;
+  /* Add padding for better spacing */
+}
+
+.glass-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.btn-dlcv {
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+.btn-dlcv:hover {
+  background-color: #24c539;
+  color: #000;
+}
