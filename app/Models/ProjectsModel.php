@@ -12,13 +12,10 @@ class ProjectsModel extends Model
     protected $returnType = 'array';
     protected $useSoftDeletes = false;
     protected $protectFields = true;
-    protected $allowedFields = ['name', 'description', 'image', 'link', 'start_date', 'end_date', 'technology_used'];
+    protected $allowedFields = ['name', 'description', 'image', 'start_date', 'end_date'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
-
-    protected array $casts = [];
-    protected array $castHandlers = [];
 
     // Dates
     protected $useTimestamps = false;
@@ -27,20 +24,13 @@ class ProjectsModel extends Model
     protected $updatedField = 'updated_at';
     protected $deletedField = 'deleted_at';
 
-    // Validation
-    protected $validationRules = [];
-    protected $validationMessages = [];
-    protected $skipValidation = false;
-    protected $cleanValidationRules = true;
+    public function getTechUsed($projectId)
+    {
+        return $this->db->table('project_tech')
+            ->select('tech_used.*')
+            ->join('tech_used', 'tech_used.id = project_tech.tech_id')
+            ->where('project_tech.project_id', $projectId)
+            ->get()->getResultArray();
+    }
 
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert = [];
-    protected $afterInsert = [];
-    protected $beforeUpdate = [];
-    protected $afterUpdate = [];
-    protected $beforeFind = [];
-    protected $afterFind = [];
-    protected $beforeDelete = [];
-    protected $afterDelete = [];
 }
