@@ -23,7 +23,7 @@
                             style="font-size: 1.5rem;"></i></a>
                     <a class="btn icon-btn" target="_blank"><i class="bi bi-github " style="font-size: 1.5rem;"></i></a>
                 </div>
-                <a class="btn btn-dlcv fw-bold px-4 glass-card rounded-pill  ">
+                <a class="btn btn-dlcv fw-bold px-4 glass-card rounded-pill " target="_blank" href="<?= base_url('resume-daria.pdf') ?>">
                     <i class="bi bi-download "></i><span class="mx-2">Download CV</span>
                 </a>
             </div>
@@ -122,7 +122,7 @@
             <button class="btn mx-0 my-1 reset-btn d-none"><i class="bi bi-x-circle m-2"></i><span
                     class="">Reset</span></button>
         </div>
-        <div class="d-flex row justify-content-center">
+        <div class="d-flex row justify-content-center mx-lg-5">
             <div class="col-md-3 mb-4 tech-item" data-category="frontend backend web" style="width: 10rem;">
                 <div
                     class="card glass-card rounded-0 h-100 d-flex flex-column justify-content-center align-items-center text-center">

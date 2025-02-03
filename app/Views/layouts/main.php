@@ -3,14 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio</title>
+    <title>renzk. Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('assets/favicon/apple-touch-icon.png') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets/favicon/favicon-32x32.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/favicon/favicon-16x16.png') ?>">
+    <link rel="manifest" href="<?= base_url('assets/favicon/site.webmanifest') ?>">
     <link href="<?= base_url('assets/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?= base_url('styles.css') ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7911ebb4bc.js" crossorigin="anonymous"></script>
     <!-- <script defer type='text/javasript' src="<?= base_url('assets/bootstrap/js/bootstrap.bundle.min.js') ?>"></script> -->
 </head>
 
@@ -18,7 +23,7 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand fw-bold text-warning" href="#">renzk.</a>
+                <a class="navbar-brand fw-bold text-warning" href="">renzk.</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -45,22 +50,13 @@
         </div>
         <?= $this->renderSection('content') ?>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.body.classList.add("loaded"); // Fade in on load
 
-            document.querySelectorAll("a").forEach(link => {
-                link.addEventListener("click", function (event) {
-                    event.preventDefault(); // Stop instant navigation
-                    var url = this.href;
-                    document.body.classList.remove("loaded"); // Fade out
-                    setTimeout(() => {
-                        window.location.href = url; // Navigate after fade
-                    }, 500);
-                });
-            });
-        });
-    </script>
+
 </body>
+<script>
+    window.addEventListener('beforeunload', function () {
+        document.body.classList.add('fade-out');
+    });
+</script>
 
 </html>
