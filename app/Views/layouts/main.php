@@ -21,7 +21,7 @@
 
 <body class="postion-relative">
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
             <div class="container">
                 <a class="navbar-brand fw-bold text-warning" href="">renzk.</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -30,14 +30,23 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold <?= is_active('about') ?>" aria-current="page" href="/">About</a>
+                        <li class="nav-item bg-dark bg-md-transparent">
+                            <a class="nav-link fw-bold  <?= is_active('home') ?>" aria-current="page" href="/">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold <?= is_active('blog') ?> " href="/blog">Blog</a>
+                        <li class="nav-item bg-dark bg-sm-transparent">
+                            <a class="nav-link fw-bold <?= is_active('about') ?>" href="/about">About</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item bg-dark bg-sm-transparent">
+                            <a class="nav-link fw-bold <?= is_active('skills') ?>" href="/skills">Skills</a>
+                        </li>
+                        <li class="nav-item bg-dark bg-sm-transparent">
                             <a class="nav-link fw-bold <?= is_active('projects') ?>" href="/projects">Projects</a>
+                        </li>
+                        <li class="nav-item bg-dark bg-sm-transparent">
+                            <a class="nav-link fw-bold <?= is_active('blogs') ?> " href="/blogs">Blogs</a>
+                        </li>
+                        <li class="nav-item bg-dark bg-sm-transparent">
+                            <a class="nav-link fw-bold <?= is_active('contact') ?> " href="/contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -48,7 +57,9 @@
         <div class="gradient-body position-fixed">
             <div class="gradient "></div>
         </div>
-        <?= $this->renderSection('content') ?>
+        <div class="">
+            <?= $this->renderSection('content') ?>
+        </div>
     </div>
 
 

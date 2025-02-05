@@ -3,7 +3,7 @@
 
 <div class="position-relative pt-5">
     <h1 class="text-xlarge my-5 text-center fw-bold">Blogs</h1>
-    <div class="d-flex flex-wrap  justify-content-center ">
+    <div class="container d-flex flex-wrap  ">
         <?php foreach ($blogs as $blog): ?>
             <div class="col-md-4 mb-4">
                 <div class="card glass-card h-100 m-2 card-hover">
