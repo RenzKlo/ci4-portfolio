@@ -44,7 +44,7 @@ class AuthController extends BaseController
                 'userName' => $user['name']
             ]);
 
-            return redirect()->to('/');
+            return redirect()->to(base_url('/'));
         }
 
         return redirect()->to(base_url('/login'))->with('error', 'Invalid login credentials.');

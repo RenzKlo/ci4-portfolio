@@ -15,7 +15,7 @@ class BlogController extends BaseController
         // Format the dates
         foreach ($blogs as &$blog) {
             $blog['author_date'] = (new \DateTime($blog['author_date']))->format('F j, Y');
-           
+
         }
 
         $data['blogs'] = $blogs;
@@ -26,7 +26,23 @@ class BlogController extends BaseController
 
     public function create()
     {
-        return view('blogs/create.php');
+        return view('blogs/create');
+    }
+
+    public function viewBlogPost($id)
+    {
+        $blogModel = new BlogModel();
+        $blog = $blogModel->find($id);
+
+        if (!$blog) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
+        $blog['author_date'] = (new \DateTime($blog['author_date']))->format('F j, Y');
+
+        $data['blog'] = $blog;
+
+        return view('blogs/viewBlogPost', $data);
     }
 
     public function store()
@@ -52,5 +68,31 @@ class BlogController extends BaseController
         ]);
 
         return redirect()->to(base_url('blogs/create'))->with('success', 'Blog post created successfully.');
+    }
+    public function edit($id)
+    {
+        $model = new BlogModel();
+        $data['blog'] = $model->find($id);
+
+        return view('blogs/editBlogPost', $data);
+    }
+
+    public function update($id)
+    {
+        $model = new BlogModel();
+        $model->update($id, [
+            'title' => $this->request->getPost('title'),
+            'content' => $this->request->getPost('content'),
+        ]);
+
+        return redirect()->to(base_url('/blogs/' . $id))->with('success', 'Blog post updated successfully.');
+    }
+
+    public function delete($id)
+    {
+        $model = new BlogModel();
+        $model->delete($id);
+
+        return redirect()->to('/blogs');
     }
 }

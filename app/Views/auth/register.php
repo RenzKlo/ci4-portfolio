@@ -18,6 +18,7 @@
             <form action="<?= base_url('register/submit') ?>" method="POST">
                 <h2>Register</h2>
                 <?= csrf_field() ?>
+                <div class="mb-3">New Admin Account</div>
                 <div class="mb-3">
                     <label for="register_name" class="form-label">Name</label>
                     <input type="text" name="name" id="register_name" placeholder="Name" class="form-control" required>

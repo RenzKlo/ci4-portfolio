@@ -43,4 +43,13 @@ class ContactController extends BaseController
 
         return redirect()->to(base_url('/contact'))->with('success', 'Your message has been sent successfully.');
     }
+
+    public function viewList()
+    {
+
+        $messageModel = new MessageModel();
+        $data['messages'] = $messageModel->findAll();
+
+        return view('contact/viewList', $data);
+    }
 }
