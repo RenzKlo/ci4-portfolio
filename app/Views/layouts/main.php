@@ -30,24 +30,35 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item bg-dark bg-md-transparent">
+                        <li class="nav-item ">
                             <a class="nav-link fw-bold  <?= is_active('home') ?>" aria-current="page" href="/">Home</a>
                         </li>
-                        <li class="nav-item bg-dark bg-sm-transparent">
+                        <li class="nav-item ">
                             <a class="nav-link fw-bold <?= is_active('about') ?>" href="/about">About</a>
                         </li>
-                        <li class="nav-item bg-dark bg-sm-transparent">
+                        <li class="nav-item">
                             <a class="nav-link fw-bold <?= is_active('skills') ?>" href="/skills">Skills</a>
                         </li>
-                        <li class="nav-item bg-dark bg-sm-transparent">
+                        <li class="nav-item ">
                             <a class="nav-link fw-bold <?= is_active('projects') ?>" href="/projects">Projects</a>
                         </li>
-                        <li class="nav-item bg-dark bg-sm-transparent">
+                        <li class="nav-item ">
                             <a class="nav-link fw-bold <?= is_active('blogs') ?> " href="/blogs">Blogs</a>
                         </li>
-                        <li class="nav-item bg-dark bg-sm-transparent">
+                        <li class="nav-item ">
                             <a class="nav-link fw-bold <?= is_active('contact') ?> " href="/contact">Contact</a>
                         </li>
+                        <?php if (session()->get('isLoggedIn')): ?>
+                            <li class="nav-item ">
+                                <a class="nav-link fw-bold <?= is_active('auth') ?>"
+                                    href="<?= base_url('/logout') ?>">Logout</a>
+                            </li>
+                        <?php else: ?>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold <?= is_active('auth') ?>"
+                                    href="<?= base_url('/login') ?>">Login</a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>

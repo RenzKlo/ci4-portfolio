@@ -85,7 +85,7 @@ class BlogController extends BaseController
             'content' => $this->request->getPost('content'),
         ]);
 
-        return redirect()->to(base_url('/blogs/' . $id))->with('success', 'Blog post updated successfully.');
+        return redirect()->to(base_url('/blogs/viewBlog/' . $id))->with('success', 'Blog post updated successfully.');
     }
 
     public function delete($id)

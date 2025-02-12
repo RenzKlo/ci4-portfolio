@@ -1,6 +1,6 @@
 <?php $this->extend('layouts/main') ?>
 <?php $this->section('content') ?>
-<div class="d-flex justify-content-center align-items-center">
+<div class="d-flex  mt-5 justify-content-center align-items-center">
     <div class="card glass-card w-100" style="max-width: 600px;">
         <div class="card-body">
             <?php if (session()->getFlashdata('success')): ?>
@@ -22,7 +22,7 @@
             <!-- Login Form -->
             <form action="<?= base_url('login/submit') ?>" method="POST">
                 <?= csrf_field() ?>
-                <h2>Login</h2>
+                <h2 class="fw-bold ">Login</h2>
                 <div class="mb-3">
                     <label for="login_email" class="form-label">Email</label>
                     <input type="email" name="email" id="login_email" placeholder="Email" class="form-control" required>
