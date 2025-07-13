@@ -1,60 +1,95 @@
-# CodeIgniter 4 Framework
 
-## What is CodeIgniter?
+# CodeIgniter 4 Portfolio
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+A simple and clean personal portfolio website built using [CodeIgniter 4](https://codeigniter.com/). This project showcases your profile, featured projects, and a contact page — all structured using the MVC pattern.
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## 🌐 Live Demo
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+Visit: [https://renzklo.com](https://renzklo.com)
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## ✨ Features
 
-## Important Change with index.php
+- Landing page with brief intro and resume download
+- Project showcase with details
+- About section
+- Contact form (static layout)
+- Responsive design using Bootstrap
+- Modular CodeIgniter 4 structure
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## 🛠 Tech Stack
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+- PHP (CodeIgniter 4)
+- HTML5, CSS3
+- Bootstrap 5
+- FontAwesome
 
-**Please** read the user guide for a better explanation of how CI4 works!
+## 📁 Directory Structure
 
-## Repository Management
+```
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+app/
+├── Controllers/
+│   ├── About.php
+│   ├── Contact.php
+│   └── Home.php
+├── Views/
+│   ├── about.php
+│   ├── contact.php
+│   ├── home.php
+│   └── templates/
+│       ├── header.php
+│       └── footer.php
+public/
+├── assets/
+│   ├── css/
+│   ├── js/
+│   └── img/
+.env
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+````
 
-## Contributing
+## ⚙️ Local Setup
 
-We welcome contributions from the community.
+1. **Clone the repository**
+   ```
+   git clone https://github.com/RenzKlo/ci4-portfolio.git
+   cd ci4-portfolio
+   ```
+2. **Install dependencies**
+   Ensure [Composer](https://getcomposer.org/) is installed:
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+   ```
+   composer install
+   ```
 
-## Server Requirements
+3. **Set up environment**
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+   * Copy `.env.example` to `.env`
+   * Update `app.baseURL` in `.env`:
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+     ```
+     app.baseURL = 'http://localhost:8080/'
+     ```
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+4. **Run the development server**
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+   ```bash
+   php spark serve
+   ```
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+5. Visit: [http://localhost:8080](http://localhost:8080)
+
+## Screenshots
+Landing Page
+<img width="1808" height="815" alt="Landing Page" src="https://github.com/user-attachments/assets/49a3ceff-b01a-4ba3-9996-a6b1815dc6f3" />
+Projects Page
+<img width="1692" height="758" alt="Projects Page" src="https://github.com/user-attachments/assets/040a8bef-4c05-41c2-b4aa-b6280e5d164b" />
+Blog Page
+<img width="1755" height="808" alt="Blog Page" src="https://github.com/user-attachments/assets/6957e790-12ef-4cb4-90b3-06d38035c89d" />
+
+## 🙋‍♂️ Author
+
+**Kent Lorenz (RenzKlo)**
+📫 [https://renzklo.com](https://renzklo.com)
+
+
