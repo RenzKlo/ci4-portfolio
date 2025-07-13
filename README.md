@@ -3,9 +3,6 @@
 
 A simple and clean personal portfolio website built using [CodeIgniter 4](https://codeigniter.com/). This project showcases your profile, featured projects, and a contact page — all structured using the MVC pattern.
 
-## 🌐 Live Demo
-
-Visit: [https://renzklo.com](https://renzklo.com)
 
 ## ✨ Features
 
